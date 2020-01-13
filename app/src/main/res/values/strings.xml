@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Semainemobile</string>
+    <string name="login_placeholder_label">Nom d\'utilisateur</string>
+    <string name="password_placeholder_label">Mot de passe</string>
+    <string name="signin_button_label">Se connecter</string>
+    <string name="signup_button_label">S\'inscrire</string>
+    <string name="label_success_login">Vous êtes connecté</string>
+    <string name="label_fail_login">Connexion impossible</string>
 </resources>
