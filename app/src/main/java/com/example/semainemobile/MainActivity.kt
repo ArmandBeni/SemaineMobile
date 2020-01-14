@@ -1,5 +1,7 @@
 package com.example.semainemobile
 
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -19,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         // Example: fetch data from specified URL and render on the textview
         // You just need to edit line 24 to do whatever you want with the "data" object :)
-        apiHandler.get("https://example.com/api") {
-                data: JSONObject -> txt.text = data.toString()
+        apiHandler.get("https://example.com/api") { data: JSONObject ->
+            txt.text = data.toString()
         }
     }
 }
