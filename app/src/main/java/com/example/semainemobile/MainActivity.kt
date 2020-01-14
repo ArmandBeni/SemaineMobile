@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         // Example: fetch data from specified URL and render on the textview
         // You just need to edit line 24 to do whatever you want with the "data" object :)
-        apiHandler.get("https://example.com/api") { data: JSONObject ->
+        apiHandler.get("https://1ef0af89-1dd3-489d-b596-b8a1057fb2c3@api.navitia.io/v1") { data: JSONObject ->
             txt.text = data.toString()
         }
     }
