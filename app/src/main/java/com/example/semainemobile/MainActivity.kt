@@ -4,43 +4,25 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.core.content.ContextCompat
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_main.*
+import android.widget.TextView
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
+    // Initialize the APIHandler class with the right context
+    private val apiHandler = APIHandler(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
+        // Example: select an existing textview with the id "text"
+        val txt = findViewById<TextView>(R.id.text)
 
-        //Add clicklister on signin button
-        signinButton.setOnClickListener {
-            val login = loginEditText.text.toString()
-            val password = passwordEditText.text.toString()
-
-
-            if (login.isNotEmpty() && password.isNotEmpty()){
-                // Green
-                textView.text=getString(R.string.label_success_login)
-                textView.setTextColor(ContextCompat.getColor(this, R.color.awesome_green))
-
-                // Snackbar.make(mainContainer, R.string.label_success_login, Snackbar.LENGTH_SHORT).show()
-
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-
-                // Pour empêcher le retour sur cet écran, on le quitte
-                this.finish()
-
-            } else {
-                // Red
-                textView.text=getString(R.string.label_fail_login)
-                textView.setTextColor(ContextCompat.getColor(this, R.color.awesome_red))
-                // textView.setBackgroundColor(ContextCompat.getColor(this, R.color.awesome_red))
-            }
+        // Example: fetch data from specified URL and render on the textview
+        // You just need to edit line 24 to do whatever you want with the "data" object :)
+        apiHandler.get("https://1ef0af89-1dd3-489d-b596-b8a1057fb2c3@api.navitia.io/v1") { data: JSONObject ->
+            txt.text = data.toString()
         }
     }
 }
