@@ -6,4 +6,7 @@
     <string name="signup_button_label">S\'inscrire</string>
     <string name="label_success_login">Vous êtes connecté</string>
     <string name="label_fail_login">Connexion impossible</string>
+    <string name="label_adress_title">tu rentres chez toi après ?</string>
+    <string name="label_adress">27 bis rue du Progrès, Montreuil</string>
+    <string name="button_main">Ça turn-up !</string>
 </resources>

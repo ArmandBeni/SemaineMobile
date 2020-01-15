@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        if (supportActionBar != null)
+            supportActionBar?.hide()
+
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         getLastLocation()
