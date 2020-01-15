@@ -15,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         getLastLocation()
+
+        buttonMainActivity.setOnClickListener {
+            val intent = Intent(this, TransportActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     @SuppressLint("MissingPermission")
@@ -108,7 +114,6 @@ class MainActivity : AppCompatActivity() {
             PERMISSION_ID
         )
     }
-
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode == PERMISSION_ID) {
