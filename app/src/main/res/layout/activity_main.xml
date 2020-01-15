@@ -47,12 +47,12 @@
         android:autofillHints=""
         android:background="@drawable/rounded_corner"
         android:ems="10"
+        android:hint="@string/label_adress_2"
         android:inputType="textPersonName"
         android:paddingLeft="16dp"
         android:paddingTop="8dp"
         android:paddingRight="16dp"
         android:paddingBottom="8dp"
-        android:text="@string/label_adress"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,5 +73,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/posImageView"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.962"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText"
+        app:srcCompat="@drawable/myposition" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

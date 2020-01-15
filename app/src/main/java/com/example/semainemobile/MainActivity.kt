@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         buttonMainActivity.setOnClickListener {
             val intent = Intent(this, TransportActivity::class.java)
             startActivity(intent)
+        }
+
+        val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
+
+        imageView.setOnClickListener {
+            Toast.makeText(this@MainActivity, "lat : ${latTextView}, lon : ${lonTextView}.", Toast.LENGTH_SHORT).show()
         }
     }
 
