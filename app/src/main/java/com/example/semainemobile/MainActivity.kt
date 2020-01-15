@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,11 +39,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
+        val posImageView = findViewById<ImageView>(R.id.posImageView)
 
-        imageView.setOnClickListener {
+        posImageView.setOnClickListener {
             Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
         }
+
+        val images = intArrayOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4)
+
+        val rand = Random()
+        imageView.setImageResource(images[rand.nextInt(images.size)])
     }
 
     @SuppressLint("MissingPermission")
