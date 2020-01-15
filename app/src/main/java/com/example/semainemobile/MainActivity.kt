@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
 
         getLastLocation()
 
+        buttonMainActivity.setOnClickListener {
+            val intent = Intent(this, TransportActivity::class.java)
+            startActivity(intent)
+        }
+
         val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
 
         imageView.setOnClickListener {
@@ -116,7 +121,6 @@ class MainActivity : AppCompatActivity() {
             PERMISSION_ID
         )
     }
-
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         if (requestCode == PERMISSION_ID) {

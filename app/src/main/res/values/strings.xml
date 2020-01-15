@@ -9,5 +9,6 @@
     <string name="label_adress_title">tu rentres chez toi après ?</string>
     <string name="label_adress">27 bis rue du Progrès, Montreuil</string>
     <string name="button_main">Ça turn-up !</string>
+    <string name="button_transport">Ça va rentrer</string>
     <string name="label_adress_2">27 bis rue du Progrès, Montreuil</string>
 </resources>
