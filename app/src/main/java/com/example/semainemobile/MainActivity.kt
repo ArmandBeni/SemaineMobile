@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_confirmation_dialog.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         if (supportActionBar != null)
             supportActionBar?.hide()
 
@@ -35,8 +38,15 @@ class MainActivity : AppCompatActivity() {
         getLastLocation()
 
         buttonMainActivity.setOnClickListener {
-            val intent = Intent(this, TransportActivity::class.java)
-            startActivity(intent)
+
+            val confirmationDialogFragment = ConfirmationDialogFragment.newInstance()
+            confirmationDialogFragment.onClick = {
+                confirmationDialogFragment.dismiss()
+
+                val intent = Intent(this, TransportActivity::class.java)
+                startActivity(intent)
+            }
+            confirmationDialogFragment.show(supportFragmentManager, "confirmation_dialog")
         }
 
         val posImageView = findViewById<ImageView>(R.id.posImageView)
@@ -46,9 +56,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val images = intArrayOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4)
+        val quotes = arrayOf("Il pleut", "il mouille", "c'est la chatte à Mcdoom")
 
         val rand = Random()
         imageView.setImageResource(images[rand.nextInt(images.size)])
+        randTextView.text = quotes[rand.nextInt(quotes.size)]
     }
 
     @SuppressLint("MissingPermission")

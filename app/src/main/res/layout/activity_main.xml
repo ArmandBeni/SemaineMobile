@@ -65,12 +65,12 @@
         android:autofillHints=""
         android:background="@drawable/rounded_corner"
         android:ems="10"
+        android:hint="@string/label_adress"
         android:inputType="textPersonName"
         android:paddingLeft="16dp"
         android:paddingTop="8dp"
         android:paddingRight="16dp"
         android:paddingBottom="8dp"
-        android:text="@string/label_adress"
         android:textColor="#555555"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonMainActivity"
@@ -99,7 +99,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158"
+        app:layout_constraintVertical_bias="0.115"
         app:srcCompat="@drawable/img1" />
+
+    <TextView
+        android:id="@+id/randTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.078" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
