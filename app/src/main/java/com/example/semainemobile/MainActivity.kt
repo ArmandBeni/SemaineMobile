@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
 
         imageView.setOnClickListener {
-            Toast.makeText(this@MainActivity, "lat : ${latTextView}, lon : ${lonTextView}.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
         }
     }
 
