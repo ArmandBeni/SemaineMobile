@@ -11,10 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         getLastLocation()
+
+        val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
+
+        imageView.setOnClickListener {
+            Toast.makeText(this@MainActivity, "lat : ${latTextView}, lon : ${lonTextView}.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     @SuppressLint("MissingPermission")
