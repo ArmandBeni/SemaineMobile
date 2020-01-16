@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -14,6 +15,7 @@ import android.provider.Settings
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
             val confirmationDialogFragment = ConfirmationDialogFragment.newInstance()
             confirmationDialogFragment.onClick = {
-                confirmationDialogFragment.dismiss()
+                // confirmationDialogFragment.dismiss()
 
                 val intent = Intent(this, TransportActivity::class.java)
                 startActivity(intent)
@@ -49,18 +51,18 @@ class MainActivity : AppCompatActivity() {
             confirmationDialogFragment.show(supportFragmentManager, "confirmation_dialog")
         }
 
-        val posImageView = findViewById<ImageView>(R.id.posImageView)
+       // val posImageView = findViewById<ImageView>(R.id.posImageView)
 
-        posImageView.setOnClickListener {
-            Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
-        }
+        //posImageView.setOnClickListener {
+        //    Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
+        //}
 
-        val images = intArrayOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4)
-        val quotes = arrayOf("Il pleut", "il mouille", "c'est la chatte à Mcdoom")
+        val images = intArrayOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5)
+        val quotes = arrayOf("“Juste un verre et je rentre” \uD83D\uDE0F", "“Amuse toi bien, pas de bêtises” - Maman", "c'est la chatte à Mcdoom")
 
         val rand = Random()
         imageView.setImageResource(images[rand.nextInt(images.size)])
-        randTextView.text = quotes[rand.nextInt(quotes.size)]
+        randTextView.text = quotes[rand.nextInt(images.size)]
     }
 
     @SuppressLint("MissingPermission")
@@ -73,8 +75,8 @@ class MainActivity : AppCompatActivity() {
                     if (location == null) {
                         requestNewLocationData()
                     } else {
-                        findViewById<TextView>(R.id.latTextView).text = location.latitude.toString()
-                        findViewById<TextView>(R.id.lonTextView).text = location.longitude.toString()
+                        // findViewById<TextView>(R.id.latTextView).text = location.latitude.toString()
+                        // findViewById<TextView>(R.id.lonTextView).text = location.longitude.toString()
                     }
                 }
             } else {
@@ -104,9 +106,9 @@ class MainActivity : AppCompatActivity() {
 
     private val mLocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
-            val mLastLocation: Location = locationResult.lastLocation
-            findViewById<TextView>(R.id.latTextView).text = mLastLocation.latitude.toString()
-            findViewById<TextView>(R.id.lonTextView).text = mLastLocation.longitude.toString()
+            // val mLastLocation: Location = locationResult.lastLocation
+            // findViewById<TextView>(R.id.latTextView).text = mLastLocation.latitude.toString()
+            // findViewById<TextView>(R.id.lonTextView).text = mLastLocation.longitude.toString()
         }
     }
 
