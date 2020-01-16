@@ -51,14 +51,8 @@ class MainActivity : AppCompatActivity() {
             confirmationDialogFragment.show(supportFragmentManager, "confirmation_dialog")
         }
 
-       // val posImageView = findViewById<ImageView>(R.id.posImageView)
-
-        //posImageView.setOnClickListener {
-        //    Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
-        //}
-
-        val images = intArrayOf(R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5)
-        val quotes = arrayOf("“Juste un verre et je rentre” \uD83D\uDE0F", "“Amuse toi bien, pas de bêtises” - Maman", "c'est la chatte à Mcdoom")
+        val images = intArrayOf(R.drawable.img1, R.drawable.img2)
+        val quotes = arrayOf("“Amuse toi bien, pas de bêtises” - Maman", "“Juste un verre et je rentre” \uD83D\uDE0F")
 
         val rand = Random()
         imageView.setImageResource(images[rand.nextInt(images.size)])

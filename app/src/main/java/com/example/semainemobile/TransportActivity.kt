@@ -25,14 +25,22 @@ class TransportActivity : AppCompatActivity() {
 
         getCodeBtn.setOnClickListener {
 
-            val confirmationDialogFragment = ConfirmationDialogFragment.newInstance()
-            confirmationDialogFragment.onClick = {
-                // confirmationDialogFragment.dismiss()
-
-                val intent = Intent(this, TransportActivity::class.java)
-                startActivity(intent)
+            val codeDialogFragment = CodeDialogFragment.newInstance()
+            codeDialogFragment.onClick = {
+                codeDialogFragment.dismiss()
             }
-            confirmationDialogFragment.show(supportFragmentManager, "confirmation_dialog")
+            codeDialogFragment.show(supportFragmentManager, "code_dialog")
+        }
+
+        // create your code
+
+        getCodeView.setOnClickListener{
+
+            val getCodeDialogFragment = GetCodeDialogFragment.newInstance()
+            getCodeDialogFragment.onClick = {
+                getCodeDialogFragment.dismiss()
+            }
+            getCodeDialogFragment.show(supportFragmentManager, "get_code_dialog")
         }
     }
 }

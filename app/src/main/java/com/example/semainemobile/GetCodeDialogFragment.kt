@@ -5,15 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.fragment_confirmation_dialog.*
+import kotlinx.android.synthetic.main.fragment_get_code_dialog.*
 
-class ConfirmationDialogFragment: DialogFragment() {
+class GetCodeDialogFragment: DialogFragment() {
 
     var onClick: (() -> Unit)? = null
 
     companion object {
-        fun newInstance(): ConfirmationDialogFragment {
-            val fragment = ConfirmationDialogFragment()
+        fun newInstance(): GetCodeDialogFragment {
+            val fragment = GetCodeDialogFragment()
 
             val arguments = Bundle()
 
@@ -28,13 +28,13 @@ class ConfirmationDialogFragment: DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_confirmation_dialog, container, false)
+        return inflater.inflate(R.layout.fragment_get_code_dialog, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imageButtonValidate.setOnClickListener {
+        validateCodeBtn.setOnClickListener {
             onClick?.invoke()
         }
     }

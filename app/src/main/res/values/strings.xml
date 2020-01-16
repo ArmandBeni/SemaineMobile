@@ -7,11 +7,10 @@
     <string name="label_success_login">Vous êtes connecté</string>
     <string name="label_fail_login">Connexion impossible</string>
     <string name="label_adress_title">tu rentres chez toi après ?</string>
-    <string name="label_adress">27 bis rue du Progrès, Montreuil</string>
+    <string name="label_adress">Entrez une adresse</string>
     <string name="button_main">Lancer le turn-up 🎉</string>
     <string name="button_transport">Ça va rentrer</string>
-    <string name="label_adress_2">27 bis rue du Progrès, Montreuil</string>
-    <string name="confirmLabel">Amuse toi bien !</string>
+    <string name="confirmLabel">Tu seras alerté(e) 20min avant les derniers métro</string>
     <string name="enter_adress_label">Je rentre au</string>
     <string name="info_code_label">Vérifie que tout le monde rentre bien avec les codes turn-up !</string>
     <string name="get_code_btn">Choppe ton code 👀</string>
@@ -19,4 +18,16 @@
     <string name="last_metro_label">Dernier métro de la nuit</string>
     <string name="more_info_label">voir les solutions après fermeture du métro</string>
     <string name="validate_btn_label">GO !</string>
+    <string name="share_code_text_label">Mon code à partager</string>
+    <string name="code_label">3 2 F 7</string>
+    <string name="code_validate_label">Ton ami(e) sera alerté(e) lors de ton arrivée à bon port ⚓️.</string>
+    <string name="code_validate_label2">Mais elle ne pourra pas avoir accès à ta position !</string>
+    <string name="turnup_on_label">Turn up est lancé !</string>
+    <string name="create_code_label">Rentrer un code</string>
+    <string name="code_value_label">C O D E</string>
+    <string name="name_friend_text_label">Nom de l\'ami(e)</string>
+    <string name="info_label">Tu seras alerté(e) lors de l’arrivée à bon port de ton ami.</string>
+    <string name="validate_btn">Valider</string>
+    <string name="follow_activated_label">Suivi activé !</string>
+    <string name="friends_follow_label">Tu seras alerté(e) quand Jules sera arrivé(e) chez lui.</string>
 </resources>
