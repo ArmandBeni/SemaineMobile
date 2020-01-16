@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -50,8 +51,13 @@ class MainActivity : AppCompatActivity() {
 
         val imageView = findViewById<ImageView>(R.id.posImageView) as ImageView
 
+        var myAddress = ""
+
         imageView.setOnClickListener {
             Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
+            var test = findViewById<EditText>(R.id.editText)
+
+            test.setText(myAddress)
         }
 
         val retrofit = Retrofit.Builder()
@@ -59,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-        val navitiaApiKey = "15f15f9c-5799-4afa-8ef4-38649ed6a20c"
+        val navitiaApiKey = "61ea5007-af1a-4b44-bc6e-b692f489a477"
         val txt = findViewById<TextView>(R.id.textAddress)
 
         addressService = retrofit.create(AddressService::class.java)
@@ -72,7 +78,8 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<AddressResult>, response: Response<AddressResult>) {
                 response.body()
-                txt.text = "succeed"
+                myAddress = response.body()?.address?.label ?: "Impossible de trouver votre position"
+                txt.text = response.body()?.address?.label ?: "Impossible de trouver votre position"
             }
 
         })
