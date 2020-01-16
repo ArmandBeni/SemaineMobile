@@ -15,13 +15,23 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.semainemobile.network.data.AddressResult
+import com.example.semainemobile.network.AddressService
 import com.google.android.gms.location.*
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Header
 
 class MainActivity : AppCompatActivity() {
 
     private val PERMISSION_ID = 42
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
+    private lateinit var addressService: AddressService
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,6 +53,45 @@ class MainActivity : AppCompatActivity() {
         imageView.setOnClickListener {
             Toast.makeText(this@MainActivity, "lat : ${latTextView.text}, lon : ${lonTextView.text}", Toast.LENGTH_SHORT).show()
         }
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://api.navitia.io/v1/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val navitiaApiKey = "15f15f9c-5799-4afa-8ef4-38649ed6a20c"
+        val txt = findViewById<TextView>(R.id.textAddress)
+
+        addressService = retrofit.create(AddressService::class.java)
+
+        addressService.getAddress(navitiaApiKey).enqueue(object: Callback<AddressResult> {
+            override fun onFailure(call: Call<AddressResult>, t: Throwable) {
+                t.toString()
+                txt.text = "fail"
+            }
+
+            override fun onResponse(call: Call<AddressResult>, response: Response<AddressResult>) {
+                response.body()
+                txt.text = "succeed"
+            }
+
+        })
+
+        //API Request for address
+        // Insérer ici la clé d'API Navitia
+//        val navitiaApiKey = "1ef0af89-1dd3-489d-b596-b8a1057fb2c3"
+//        val addressService: AddressService = NavitiaService()
+//            .getAddressService()
+//
+//        val response:Response<AddressResult> = addressService.findAddress("fr-idf", 2.420498f, 48.851871f, navitiaApiKey).execute()
+//
+//        val txt = findViewById<TextView>(R.id.textAddress)
+//
+//        if(response.isSuccessful) {
+//            println("hello")
+//        } else {
+//            print("Fail !!! ")
+//        }
     }
 
     @SuppressLint("MissingPermission")
@@ -129,4 +178,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 }
