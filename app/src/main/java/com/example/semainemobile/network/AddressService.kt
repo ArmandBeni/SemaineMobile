@@ -16,8 +16,10 @@ import retrofit2.http.*
 
 interface AddressService {
 
-    @GET("coverage/fr-idf/coord/2.420498;48.851871")
-    fun getAddress(@Header("Authorization") authorization:String): Call<AddressResult>
+    @GET("coverage/fr-idf/coord/{lon};{lat}")
+    fun getAddress(@Path("lon") lon:String,
+                   @Path("lat") lat:String,
+                   @Header("Authorization") authorization:String): Call<AddressResult>
 }
 
 // Marche
