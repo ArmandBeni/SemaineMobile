@@ -45,14 +45,18 @@ class TransportActivity : AppCompatActivity() {
         if (supportActionBar != null)
             supportActionBar?.hide()
 
+        //Font assignment
         val typeface = Typeface.createFromAsset(assets, "MuktaVaani-Medium.ttf")
         textView5.typeface = typeface
         editAddress.typeface = typeface
         textView.typeface = typeface
-        textView2.typeface = typeface
         textView6.typeface = typeface
         getCodeBtn.typeface = typeface
         getCodeView.typeface = typeface
+        otherTransport1.typeface = typeface
+        priceTransport.typeface = typeface
+        otherTransport3.typeface = typeface
+        priceTransport2.typeface = typeface
 
 
 
@@ -152,9 +156,7 @@ class TransportActivity : AppCompatActivity() {
 
     private val mLocationCallback = object : LocationCallback() {
         override fun onLocationResult(locationResult: LocationResult) {
-            // val mLastLocation: Location = locationResult.lastLocation
-            // findViewById<TextView>(R.id.latTextView).text = mLastLocation.latitude.toString()
-            // findViewById<TextView>(R.id.lonTextView).text = mLastLocation.longitude.toString()
+             val mLastLocation: Location = locationResult.lastLocation
         }
     }
 

@@ -7,10 +7,10 @@
     <string name="label_success_login">Vous êtes connecté</string>
     <string name="label_fail_login">Connexion impossible</string>
     <string name="label_adress_title">tu rentres chez toi après ?</string>
-    <string name="label_adress">Entrez une adresse</string>
+    <string name="label_adress">Entre une adresse</string>
     <string name="button_main">Lancer le turn-up 🎉</string>
     <string name="button_transport">Ça va rentrer</string>
-    <string name="confirmLabel">Tu seras alerté(e) 20min avant les derniers métro</string>
+    <string name="confirmLabel">Tu seras alerté(e) 20min avant les derniers métros</string>
     <string name="enter_adress_label">Je rentre au</string>
     <string name="info_code_label">Vérifie que tout le monde rentre bien avec les codes turn-up !</string>
     <string name="get_code_btn">Choppe ton code 👀</string>
@@ -30,4 +30,20 @@
     <string name="validate_btn">Valider</string>
     <string name="follow_activated_label">Suivi activé !</string>
     <string name="friends_follow_label">Tu seras alerté(e) quand Jules sera arrivé(e) chez lui.</string>
+    <string name="metroSchedule">Arrivée à 0h34</string>
+    <string name="metroTime">13 min</string>
+    <string name="contentDescriptionMetro">Metro images</string>
+    <string name="contentDescriptionPin">Pin image</string>
+    <string name="textTitle1">turn</string>
+    <string name="textTitle2">-</string>
+    <string name="textTitle3">up</string>
+    <string name="imageLogo">Logo\'s image</string>
+    <string name="otherTransport1">ou</string>
+    <string name="otherTransport2">Uber image</string>
+    <string name="otherTransport3">|</string>
+    <string name="transportPrice">24€</string>
+    <string name="otherTransport4">Lime logo</string>
+    <string name="priceTransport2">17€</string>
+    <string name="confirmationImg">confirmation image</string>
+    <string name="quitButton">Close button</string>
 </resources>

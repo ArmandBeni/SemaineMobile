@@ -39,10 +39,10 @@
 
     <TextView
         android:id="@+id/randTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         android:textAlignment="center"
         android:textColor="@color/whiteTxt"
         android:textSize="20sp"
@@ -51,15 +51,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.191" />
-
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:id="@+id/imageLogo"
+        android:layout_width="93dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/imageLogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logotype" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
