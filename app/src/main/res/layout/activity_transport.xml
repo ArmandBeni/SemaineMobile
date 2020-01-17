@@ -7,21 +7,8 @@
     android:clickable="false"
     android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/posImageView3"
-        android:layout_width="23dp"
-        android:layout_height="25dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
-        app:layout_constraintEnd_toEndOf="@+id/editText3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.434"
-        app:srcCompat="@drawable/myposition" />
-
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editAddress"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginEnd="16dp"
@@ -41,6 +28,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/pinPosition"
+        android:layout_width="23dp"
+        android:layout_height="25dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/editAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editAddress"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editAddress"
+        app:layout_constraintTop_toTopOf="@+id/editAddress"
+        app:layout_constraintVertical_bias="0.434"
+        app:srcCompat="@drawable/myposition" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -114,7 +114,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editAddress" />
 
     <TextView
         android:id="@+id/textView2"
