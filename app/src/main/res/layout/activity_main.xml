@@ -28,8 +28,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="253dp"
-        android:layout_height="307dp"
+        android:layout_width="150dp"
+        android:layout_height="207dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +39,12 @@
 
     <TextView
         android:id="@+id/randTextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textColor="@color/whiteTxt"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

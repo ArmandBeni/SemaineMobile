@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity() {
             }
             confirmationDialogFragment.show(supportFragmentManager, "confirmation_dialog")
         }
-
         val images = intArrayOf(R.drawable.img1, R.drawable.img2)
         val quotes = arrayOf("“Amuse toi bien, pas de bêtises” - Maman", "“Juste un verre et je rentre” \uD83D\uDE0F")
 
