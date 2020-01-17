@@ -8,7 +8,6 @@ import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.fragment_code_dialog.*
 
 class CodeDialogFragment: DialogFragment() {
-
     var onClick: (() -> Unit)? = null
 
     companion object {

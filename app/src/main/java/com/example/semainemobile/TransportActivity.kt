@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Typeface
 import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +44,17 @@ class TransportActivity : AppCompatActivity() {
 
         if (supportActionBar != null)
             supportActionBar?.hide()
+
+        val typeface = Typeface.createFromAsset(assets, "MuktaVaani-Medium.ttf")
+        textView5.typeface = typeface
+        editAddress.typeface = typeface
+        textView.typeface = typeface
+        textView2.typeface = typeface
+        textView6.typeface = typeface
+        getCodeBtn.typeface = typeface
+        getCodeView.typeface = typeface
+
+
 
         // show code
 

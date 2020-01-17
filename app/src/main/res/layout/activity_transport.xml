@@ -98,6 +98,7 @@
         android:layout_marginTop="28dp"
         android:background="@drawable/rounded_corner"
         android:text="@string/get_code_btn"
+        android:textAllCaps="false"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView6"

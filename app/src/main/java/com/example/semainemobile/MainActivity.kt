@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Typeface
 import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         if (supportActionBar != null)
             supportActionBar?.hide()
+
+        val typeface = Typeface.createFromAsset(assets, "MuktaVaani-Medium.ttf")
+        randTextView.typeface = typeface
+        buttonMainActivity.typeface = typeface
+
 
         buttonMainActivity.setOnClickListener {
 
