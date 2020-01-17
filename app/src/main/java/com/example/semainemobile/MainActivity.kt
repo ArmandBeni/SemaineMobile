@@ -1,6 +1,7 @@
 package com.example.semainemobile
 
 import android.content.Intent
+import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,6 +15,11 @@ class MainActivity : AppCompatActivity() {
 
         if (supportActionBar != null)
             supportActionBar?.hide()
+
+        val typeface = Typeface.createFromAsset(assets, "MuktaVaani-Medium.ttf")
+        randTextView.typeface = typeface
+        buttonMainActivity.typeface = typeface
+
 
         buttonMainActivity.setOnClickListener {
 
